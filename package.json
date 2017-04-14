@@ -1,0 +1,24 @@
+{
+  "name": "instapage",
+  "version": "0.0.1",
+  "description": "super simple static site generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"instapage -help\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/InstaMarch/instapage.git"
+  },
+  "keywords": [
+    "static",
+    "node",
+    "js"
+  ],
+  "author": "mr & bp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/InstaMarch/instapage/issues"
+  },
+  "homepage": "https://github.com/InstaMarch/instapage#readme"
+}

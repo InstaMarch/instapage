@@ -8,7 +8,7 @@ note.frequency = 880;
 
 let number = 34; number.toString()
 
-makeTuner = function (spec = {
+let makeTuner = function (spec = {
     frequency: 440,
     amplitude: .5    
 }) {

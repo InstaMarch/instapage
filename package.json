@@ -3,9 +3,14 @@
   "version": "0.0.1",
   "description": "super simple static site generator",
   "main": "index.js",
+  "config": {
+  "lintcmd": "./node_modules/.bin/jslint"
+  },
   "scripts": {
     "help": "\"instapage -help\"",
-    "test": "babel test -d lib"
+    "test": "\"babel test -d lib\"",
+    "server:create": "http-server public/$npm_package_version -p $npm_package_port",
+    "server:launch": "open "
   },
   "repository": {
     "type": "git",

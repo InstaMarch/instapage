@@ -8,6 +8,7 @@ let obj = {
 
 Object.keys(obj);
 
+// returns an arry of the keys as strings
 // ["ref1", "ref2", "ref3"]
 
 Object.keys(obj).forEach(function(ref) {

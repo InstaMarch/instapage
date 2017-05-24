@@ -4,3 +4,14 @@ Instructions for connecting to a personal instance of redis
 Task 01
 --
 run redis locally and create thekey, set it to 1
+
+To get to Redis from Windows cmd 
+
+cd into Users > userName > Downloads(or wherever you decide to place it) > Redis-x64-3.2.100
+
+Once in that file use cmd redis-cli.exe
+
+
+Other instructions:
+
+https://redis.io/topics/quickstart

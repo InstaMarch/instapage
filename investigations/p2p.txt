@@ -1,0 +1,2 @@
+Instructions for connecting to a personal instance of redis
+--

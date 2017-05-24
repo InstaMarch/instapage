@@ -1,2 +1,6 @@
 Instructions for connecting to a personal instance of redis
 --
+
+Task 01
+--
+run redis locally and create thekey, set it to 1

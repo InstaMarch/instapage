@@ -25,19 +25,19 @@ function appendArray(el, children) {
     });
 }
 
-function setStyles() {
-    if (!styles) {
-    el.removeAttribute("styles");
+function setStyles(el, styles) {
+  if (!styles) {
+    el.removeAttribute(`styles`);
     return;
-    }
+  }
 
-    Object.keys(styles).forEach((styleName) => {
-      if (styleName in el.style) {
-        el.style[styleName] = styles[styleName]; // eslint-disable-line no-param-reassign
-      } else {
-        console.warn(`${styleName} is not a valid style for a <${el.tagName.toLowerCase()}>`); 
-      }
-    });
+  Object.keys(styles).forEach((styleName) => {
+    if (styleName in el.style) {
+      el.style[styleName] = styles[styleName]; // eslint-disable-line no-param-reassign
+    } else {
+      console.warn(`${styleName} is not a valid style for a <${el.tagName.toLowerCase()}>`);
+    }
+  });
 }
 
 

@@ -2,6 +2,40 @@
 super simple static site generator
 
 # usage
+
+ip make dev
+ip make productition
+ip make icons
+ip make archive
+ip make mobile
+
+#lessons from metalsmith
+
+- biggest weakness: built around MD files
+- 1-to-1 pages to markdown
+- content tag is only option to put in content
+
+
+#design guidelines
+- markdown goes in template rather than template part of MD
+-
+
+#goals
+- want non-programmer can maintain
+- want it to be simple
+- react create-element - good template
+- build system composes weirdnesses
+- MD makes more sense 
+
+#todo
+- review 
+- check out tape
+- tape tests expect on the tests that generator will generate
+some type of 
+- 
+
+- single page 
+
 instapage -h
 
 A.cat key.conf config1.json config2.json | instapage - > index.html
@@ -55,6 +89,7 @@ group=system
 
 Integral Theory
 Ken Wilbur
+Sex, Ecologoy and 
 
 axes
 --

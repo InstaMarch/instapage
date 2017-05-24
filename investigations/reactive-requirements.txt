@@ -1,9 +1,0 @@
-There are three distinct parts to React that make it great:
-
-- JSX syntax
-- Components/composability
-- One-directional data flow (UI > action > state > magic > UI)
-
-React brings comes from two places:
-The sheer effort of parsing 60 KB of JavaScript.
-The magic that happens after you update the state, before the DOM updates.

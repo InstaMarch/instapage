@@ -8,7 +8,7 @@
   },
   "scripts": {
     "help": "\"instapage -help\"",
-    "test": "\"test -d lib\"",
+    "test": "tape ./tests/test.js",
     "instalint": "$npm_package_config_lintcmd",
     "server:launch": "open "
   },

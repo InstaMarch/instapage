@@ -1,7 +1,3 @@
 Instapage Todo
 --
 
-- play with babel
-
-
-

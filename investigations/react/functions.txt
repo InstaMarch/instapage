@@ -1,4 +1,20 @@
 List of all functions used in Basic React
 --
+makeElement(type, textOrPropsOrChild, ...otherChildren)
+setStyles(el, styles)
 
+Functions used internally
+--
 appendText(el, text)
+appendArray(el, children)
+
+Helper functions to create nested dom elements
+--
+const h1 = (...args) => makeElement(`h1`, ...args);
+const h2 = (...args) => makeElement(`h2`, ...args);
+const a = (...args) => makeElement(`a`, ...args);
+const button = (...args) => makeElement(`button`, ...args);
+const div = (...args) => makeElement(`div`, ...args);
+const header = (...args) => makeElement(`header`, ...args);
+const p = (...args) => makeElement(`p`, ...args);
+const span = (...args) => makeElement(`span`, ...args);

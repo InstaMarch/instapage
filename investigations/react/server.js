@@ -1,14 +1,14 @@
-const jsdom = require("jsdom");  // jsdom is an object
-const { JSDOM } = jsdom; //JSDOM is function grabbed out of jsdom
+fs = require('fs')
+// Removed jsdom!!
+//const jsdom = require("jsdom");  // jsdom is an object
+//const { JSDOM } = jsdom; //JSDOM is function grabbed out of jsdom
 //const App = require(`./components/App/App`);
 const App = require(`./reactive-vanilla.js`).App; // works with export
 const someData = { what: `eva` };
 
-global.document = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
-//window = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+//global.document = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
 
-global.window = document.defaultView;
-
+//
 const appDom = App(someData);
 
 const html = `<!DOCTYPE html>
@@ -32,7 +32,18 @@ const express = require(`express`);
 const server = express();
 
 server.get(`/`, (req, res) => {
+  res.send();
+});
+
+server.get(`/init`, (req, res) => {
   res.send(html);
 });
+
+
+server.get(`/help`, (req, res) => {
+  fs.readFile('./html/help.html', 'utf8',
+  res.send(html);
+});
+
 
 server.listen(8080); // callbacks are for wimps

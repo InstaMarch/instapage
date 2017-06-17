@@ -123,8 +123,80 @@ const Header = props => (
 );
 const Table = props => div({ className: `skill-table` }, props.rows);
 
+
+// data would be passed in from render function
+const toggleRow = data => null;
+
+const expandOrCollapseRow = (e, data) =>(status("got here"));
+
+
+const TableRow = (initialData) => {
+  let el = null;
+
+  // called when the component is called
+  const render = data => (
+    div(
+      { className: `table-row` },
+      div(
+        {
+          className: `table-row__content`,
+          onclick: () => toggleRow(data),
+        },
+        button(
+          { onclick: e => expandOrCollapseRow(e, data) },
+          `click me`
+        ),
+        p(data.name)
+      )
+    )
+  );
+
+  // when the data changes, update() will be called with the new data
+  const update = (prevEl, newData) => {
+    const nextEl = render(newData);
+
+    if (nextEl.isEqualNode(prevEl)) {
+      console.warn(`render() was called but there was no change in the rendered output`, el);
+    } else {
+      prevEl.parentElement.replaceChild(nextEl, prevEl);
+    }
+
+    return nextEl;
+  };
+
+  el = render(initialData);
+
+  // the store will call this when data has changed that will affect this component
+  initialData.store.listen(initialData.id, (newData) => {
+    el = update(el, newData);
+  });
+
+  return el;
+};
+
+
+const Store => (
+  callbacks = [];
+  dataStore = [];
+
+  const listen = (id,fn,data) => (
+    callback[id] = fn( dataStore[id] );
+  )
+  
+  const informAll = () => (
+    callbacks.forEach(cb) => cb(data); 
+
+  )
+);
+
+//////////////////////////////////
+// Must build the App from properties which are passed to
+// helper functions such as div() which returns DOM elements
+// that are endowed with 
+//////////////////////////////////
 const App = props => (
   div({ id: `app` },
+    TableRow({id: 001,store: globalStore}),
     Header({ version: props.version }),
     Table({ rows: props.rows })
   )

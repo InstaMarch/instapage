@@ -1,3 +1,6 @@
 Instapage Todo
 --
 
+* TDD of InstaMarch Homepage
+* Switch investigations home repo
+* clean up build system

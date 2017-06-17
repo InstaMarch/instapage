@@ -8,7 +8,7 @@
   },
   "scripts": {
     "help": "\"instapage -help\"",
-    "test": "\"babel test -d lib\"",
+    "test": "\"test -d lib\"",
     "instalint": "$npm_package_config_lintcmd",
     "server:launch": "open "
   },
@@ -28,9 +28,6 @@
   },
   "homepage": "https://github.com/InstaMarch/instapage#readme",
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
     "jslint-node": "^1.2.4",
     "tape": "^4.6.3"
   }

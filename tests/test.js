@@ -3,7 +3,7 @@
 const test = require("tape");
 const app = require("../app.js");
 
-test("make-h1", function (t) {
+test("make h1", function (t) {
     "use strict";
     t.plan(1);
     t.equal(
@@ -12,7 +12,7 @@ test("make-h1", function (t) {
     );
 });
 
-test("make-header", function (t) {
+test("make header", function (t) {
     "use strict";
     t.plan(1);
     t.equal(
@@ -23,5 +23,16 @@ test("make-header", function (t) {
             + "    <h1>InstaMarch: The Imaginary Jobs Program</h1>\n"
             + "</header>"
         )
+    );
+});
+
+test("make an h1 with a class attribute", function (t) {
+    "use strict";
+    t.plan(1);
+    t.equal(
+        app.makeTag("h1", {
+            "class": "page-title"
+        }, "InstaMarch: The Imaginary Jobs Program"),
+        "<h1 class='page-title'>InstaMarch: The Imaginary Jobs Program</h1>"
     );
 });

@@ -17,7 +17,7 @@ exports.makeTag = function (tagName, attributes, child) {
                 + child + "\n" + "</" + tagName + ">";
     }
 
-    if (tagCharacters >= 4 && numberOfAttibutes > 0) {  // if we're two tags deep..
+    if (tagCharacters >= 4 && numberOfAttibutes === 0) {  // if we're two tags deep..
         return "<" + tagName + ">" + "\n" + "    "
                 + child + "\n" + "</" + tagName + ">";
     }

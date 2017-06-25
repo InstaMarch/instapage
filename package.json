@@ -4,7 +4,7 @@
   "description": "super simple static site generator",
   "main": "index.js",
   "config": {
-      "lintcmd": "./node_modules/.bin/jslint ./investigations/reactive-vanilla.js"
+    "lintcmd": "./node_modules/.bin/jslint ./investigations/reactive-vanilla.js"
   },
   "scripts": {
     "help": "\"instapage -help\"",
@@ -29,6 +29,7 @@
   "homepage": "https://github.com/InstaMarch/instapage#readme",
   "devDependencies": {
     "jslint-node": "^1.2.4",
+    "nyc": "^11.0.2",
     "tape": "^4.6.3"
   }
 }

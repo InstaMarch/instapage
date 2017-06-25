@@ -9,25 +9,38 @@ exports.makeTag = function (tagName, attributes, child) {
         return total;
     }, 0);
 
-    const numberOfAttibutes = Object.keys(attributes).length;
+    const numberOfAttributes = Object.keys(attributes).length;
 
-    if (tagCharacters >= 4 && numberOfAttibutes > 0) {  // if we're two tags deep..
-        return "<" + tagName + "class ="
-                + attributes.class + " >" + "\n" + "    "
+    if (tagCharacters >= 4 && numberOfAttributes > 0) {  // if we're two tags deep..
+        return "<" + tagName
+                + makeAttributesHtml + " >" + "\n" + "    "
                 + child + "\n" + "</" + tagName + ">";
     }
 
-    if (tagCharacters >= 4 && numberOfAttibutes === 0) {  // if we're two tags deep..
+    if (tagCharacters >= 4 && numberOfAttributes === 0) {  // if we're two tags deep..
         return "<" + tagName + ">" + "\n" + "    "
                 + child + "\n" + "</" + tagName + ">";
     }
 
-    if (attributes.class) {
-        return "<" + tagName + " class=\'page-title\'" + ">"
+    if (numberOfAttributes > 0) {
+        return "<" + tagName + " " + makeAttributesHtml(attributes) + ">"
                 + child + "</" + tagName + ">";
     }
 
-    if (!attributes.class) {
+    if (numberOfAttributes === 0) {
         return "<" + tagName + ">" + child + "</" + tagName + ">";
+    }
+
+    function makeAttributesHtml(attributes) {
+        return Object.keys(attributes)
+            .map(function (attribute, attributeNumber) {
+                if (attributeNumber === 0) {
+                    return attribute + "='" + attributes[attribute] + "'";
+                }
+                if (attributeNumber > 0) {
+                    return " " + attribute + "='" + attributes[attribute] + "'";
+                }
+            })
+            .reduce((output, htmlAttribute) => output += htmlAttribute, "");
     }
 };

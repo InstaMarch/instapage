@@ -8,27 +8,26 @@ exports.makeTag = function (tagName, attributes, child) {
         }
         return total;
     }, 0);
-    if (tagCharacters >= 4 && attributes.class) {  // if we're two tags deep..
+
+    const numberOfAttibutes = Object.keys(attributes).length;
+
+    if (tagCharacters >= 4 && numberOfAttibutes > 0) {  // if we're two tags deep..
         return "<" + tagName + "class ="
                 + attributes.class + " >" + "\n" + "    "
                 + child + "\n" + "</" + tagName + ">";
     }
 
-    if (tagCharacters >= 4 && !attributes.class) {  // if we're two tags deep..
+    if (tagCharacters >= 4 && numberOfAttibutes > 0) {  // if we're two tags deep..
         return "<" + tagName + ">" + "\n" + "    "
                 + child + "\n" + "</" + tagName + ">";
     }
 
-
-    let string;
     if (attributes.class) {
-        string = "<" + tagName + " class=\'page-title\'" + ">"
+        return "<" + tagName + " class=\'page-title\'" + ">"
                 + child + "</" + tagName + ">";
     }
 
     if (!attributes.class) {
-        string = "<" + tagName + ">" + child + "</" + tagName + ">";
+        return "<" + tagName + ">" + child + "</" + tagName + ">";
     }
-
-    return string;
 };

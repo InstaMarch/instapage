@@ -13,7 +13,7 @@ exports.makeTag = function (tagName, attributes, child) {
 
     if (tagCharacters >= 4 && numberOfAttributes > 0) {  // if we're two tags deep..
         return "<" + tagName
-                + makeAttributesHtml + " >" + "\n" + "    "
+                + " " + makeAttributesHtml(attributes) + ">" + "\n" + "    "
                 + child + "\n" + "</" + tagName + ">";
     }
 

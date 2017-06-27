@@ -59,7 +59,7 @@ test("make header component with attributes", function (t) {
         },
         "<h1>InstaMarch: The Imaginary Jobs Program</h1>"),
         (
-            "<header class='header' id='id'>\n"
+            "<header class='header' id='header'>\n"
             + "    <h1>InstaMarch: The Imaginary Jobs Program</h1>\n"
             + "</header>"
         )

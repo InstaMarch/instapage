@@ -27,19 +27,18 @@ exports.makeTag = function (tagName, attributes, child) {
                 + child + "</" + tagName + ">";
     }
 
-    if (numberOfAttributes === 0) {
-        return "<" + tagName + ">" + child + "</" + tagName + ">";
-    }
+    return "<" + tagName + ">" + child + "</" + tagName + ">";
+
+
 
     function makeAttributesHtml(attributes) {
         return Object.keys(attributes)
-            .map(function (attribute, attributeNumber) {
-                if (attributeNumber === 0) {
+            .map(function (attribute, attributeIndex) {
+                if(attributeIndex === 0){
                     return attribute + "='" + attributes[attribute] + "'";
                 }
-                if (attributeNumber > 0) {
-                    return " " + attribute + "='" + attributes[attribute] + "'";
-                }
+                return " " + attribute + "='" + attributes[attribute] + "'";
+
             })
             .reduce((output, htmlAttribute) => output += htmlAttribute, "");
     }

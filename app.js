@@ -1,7 +1,11 @@
 /*jslint node es6*/
+const {makeAttributesHtml} = require("./helpers");
 
 exports.makeTag = function (tagName, attributes, child) {
     "use strict";
+
+
+
     const tagCharacters = child.split("").reduce(function (total, character) {
         if (character === "<" || character === ">") {
             return total + 1;
@@ -31,15 +35,4 @@ exports.makeTag = function (tagName, attributes, child) {
 
 
 
-    function makeAttributesHtml(attributes) {
-        return Object.keys(attributes)
-            .map(function (attribute, attributeIndex) {
-                if(attributeIndex === 0){
-                    return attribute + "='" + attributes[attribute] + "'";
-                }
-                return " " + attribute + "='" + attributes[attribute] + "'";
-
-            })
-            .reduce((output, htmlAttribute) => output += htmlAttribute, "");
-    }
 };

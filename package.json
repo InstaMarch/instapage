@@ -4,7 +4,7 @@
   "description": "super simple static site generator",
   "main": "index.js",
   "config": {
-    "lintcmd": "./node_modules/.bin/jslint ./app.js"
+    "lintcmd": "./node_modules/.bin/jslint ./*.js ./tests/*.js"
   },
   "scripts": {
     "help": "\"instapage -help\"",

@@ -73,3 +73,24 @@ test("make header component with attributes", function (t) {
         )
     );
 });
+
+test("make ul with multiple li elements", function(t){
+    "use strict";
+    t.plan(1);
+    t.equal(
+        app.makeTag(
+            "ul",
+            {},
+            [
+                "<li>li element here</li>",
+                "<li>li element here</li>"
+            ]
+        ),
+        (
+            "<ul>\n"
+            + "    <li>li element here</li>\n"
+            + "    <li>li element here</li>\n"
+            + "</ul>"
+        )
+    );
+});

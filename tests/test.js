@@ -74,7 +74,7 @@ test("make header component with attributes", function (t) {
     );
 });
 
-test("make ul with multiple li elements", function(t){
+test("make ul with multiple li elements", function (t) {
     "use strict";
     t.plan(1);
     t.equal(

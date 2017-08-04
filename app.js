@@ -1,5 +1,5 @@
 /*jslint node es6*/
-const {makeAttributesHtml} = require("./helpers");
+const {makeAttributesHtml, makeHtmlElementWithChild, addLine} = require("./helpers");
 
 exports.makeTag = function (tagName, attributes, child) {
     "use strict";
@@ -22,8 +22,7 @@ exports.makeTag = function (tagName, attributes, child) {
         }
 
         if (tagCharacters >= 4 && numberOfAttributes === 0) {  // if we're two tags deep..
-            return "<" + tagName + ">" + "\n" + "    "
-                    + child + "\n" + "</" + tagName + ">";
+            return makeHtmlElementWithChild(tagName, addLine(child, 4));
         }
 
         if (numberOfAttributes > 0) {
@@ -35,8 +34,8 @@ exports.makeTag = function (tagName, attributes, child) {
 
     }
     if (Array.isArray(child)) {
-        const childrenHtml = child.reduce((totalHtml, element) => totalHtml + "    " + element + "\n", "");
+        const childrenHtml = child.reduce((totalHtml, element) => totalHtml + addLine(element, 4), "");
 
-        return "<" + tagName + ">" + "\n" + childrenHtml + "</" + tagName + ">";
+        return makeHtmlElementWithChild(tagName, childrenHtml);
     }
 };

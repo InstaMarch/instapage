@@ -12,3 +12,26 @@ module.exports.makeAttributesHtml = function (attributes) {
         })
         .reduce((output, htmlAttribute) => output + htmlAttribute, "");
 };
+
+module.exports.makeHtmlElementWithChild = function (tagName, child) {
+    "use strict";
+
+    return (
+        "<" + tagName + ">" + "\n"
+            + child + "</" + tagName + ">"
+    );
+};
+
+module.exports.addLine = function (text, numberOfSpaces = 0) {
+    function makeIndentation(numberOfSpacesToAdd) {
+        if (numberOfSpacesToAdd === 0) {
+            return "";
+        } 
+        return " " + makeIndentation(numberOfSpacesToAdd - 1);
+    }
+    if (numberOfSpaces === 0) {
+        return "\n";
+    }
+    const indentation = makeIndentation(numberOfSpaces);
+    return indentation + text + "\n";
+};

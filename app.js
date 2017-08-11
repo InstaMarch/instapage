@@ -38,4 +38,5 @@ exports.makeTag = function (tagName, attributes, child) {
 
         return makeHtmlElementWithChild(tagName, childrenHtml);
     }
+    return "";
 };

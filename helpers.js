@@ -26,7 +26,7 @@ module.exports.addLine = function (text, numberOfSpaces = 0) {
     function makeIndentation(numberOfSpacesToAdd) {
         if (numberOfSpacesToAdd === 0) {
             return "";
-        } 
+        }
         return " " + makeIndentation(numberOfSpacesToAdd - 1);
     }
     if (numberOfSpaces === 0) {

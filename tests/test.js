@@ -94,3 +94,15 @@ test("make ul with multiple li elements", function (t) {
         )
     );
 });
+
+test("makes a tag with an invalid child", function (t) {
+    "use strict";
+    t.plan(1);
+    t.equal(app.makeTag(
+        "p",
+        {},
+        3
+    ),
+    ""
+    )
+});

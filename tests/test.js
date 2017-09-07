@@ -3,7 +3,7 @@
 const test = require("tape");
 const app = require("../app.js");
 
-test("make h1", function (t) {
+test("Make h1", function (t) {
     "use strict";
     t.plan(1);
     t.equal(
@@ -12,7 +12,7 @@ test("make h1", function (t) {
     );
 });
 
-test("make header component", function (t) {
+test("Make header component", function (t) {
     "use strict";
     t.plan(1);
     t.equal(
@@ -29,7 +29,7 @@ test("make header component", function (t) {
     );
 });
 
-test("make an h1 with a class attribute", function (t) {
+test("Make an h1 with a class attribute", function (t) {
     "use strict";
     t.plan(1);
     t.equal(
@@ -54,7 +54,7 @@ test("Make an h1 with two attributes", function (t) {
     );
 });
 
-test("make header component with attributes", function (t) {
+test("Make header component with attributes", function (t) {
     "use strict";
     t.plan(1);
     t.equal(
@@ -74,7 +74,7 @@ test("make header component with attributes", function (t) {
     );
 });
 
-test("make ul with multiple li elements", function (t) {
+test("Make ul with multiple li elements", function (t) {
     "use strict";
     t.plan(1);
     t.equal(
@@ -95,7 +95,7 @@ test("make ul with multiple li elements", function (t) {
     );
 });
 
-test("makes a tag with an invalid child", function (t) {
+test("Makes a tag with an invalid child", function (t) {
     "use strict";
     t.plan(1);
     t.equal(app.makeTag(
@@ -105,4 +105,16 @@ test("makes a tag with an invalid child", function (t) {
     ),
     ""
     )
+});
+
+test("Makes a basic page with a doctype", function (t) {
+    "use strict";
+    let document = "";
+    document += "<!DOCTYPE html>";
+    document += "<html>";
+    document += "<body>";
+    document += "</body>";
+    document += "</html>";
+    t.plan(1);
+    t.equal(app.makePage(), document);
 });

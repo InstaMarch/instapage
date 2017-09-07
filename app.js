@@ -1,7 +1,7 @@
 /*jslint node es6*/
 const {makeAttributesHtml, makeHtmlElementWithChild, addLine} = require("./helpers");
 
-exports.makeTag = function (tagName, attributes, child) {
+module.exports.makeTag = function (tagName, attributes, child) {
     "use strict";
 
     if (typeof(child) === "string") {
@@ -38,5 +38,9 @@ exports.makeTag = function (tagName, attributes, child) {
 
         return makeHtmlElementWithChild(tagName, childrenHtml);
     }
+    return "";
+};
+
+module.exports.makePage = function () {
     return "";
 };

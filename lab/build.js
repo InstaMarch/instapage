@@ -1,4 +1,4 @@
-const {makeTag} = require("./app");
+const {makeTag} = require("../app");
 const fs = require("fs");
 
 const html = makeTag("html", {},

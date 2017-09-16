@@ -42,5 +42,11 @@ module.exports.makeTag = function (tagName, attributes, child) {
 };
 
 module.exports.makePage = function () {
-    return "";
+    let document = "";
+    document += "<!DOCTYPE html>";
+    document += "<html>";
+    document += "<body>";
+    document += "</body>";
+    document += "</html>";
+    return document;
 };

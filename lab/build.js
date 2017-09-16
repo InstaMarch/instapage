@@ -1,5 +1,10 @@
 const {makeTag} = require("../app");
 const fs = require("fs");
+const container = makeTag("div", {
+    "class": "container"
+}, 
+    makeTag("header", {}, "InstaMarch")
+);
 
 const html = makeTag("html", {},
     [
@@ -8,12 +13,10 @@ const html = makeTag("html", {},
                 makeTag("link", {
                     rel: "stylesheet",
                     href: "index.css"
-                }, "SET"
+                },
                 )
             ]),
-        makeTag("body", {},
-            makeTag("p", {}, "hello World")
-        )
+        makeTag("body", {}, container)
 ]);
 
 fs.writeFile("index.html", html, function (error) {

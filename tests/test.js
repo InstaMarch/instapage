@@ -118,3 +118,19 @@ test("Makes a basic page with a doctype", function (t) {
     t.plan(1);
     t.equal(app.makePage(), document);
 });
+
+test("Makes a basic page with an H1 Element containing the text 'hello world'", function (t) {
+    "use strict";
+
+    let document = "";
+    document += "<!DOCTYPE html>";
+    document += "<html>";
+    document += "<body>";
+    document += "<h1>hello world</h1>";
+    document += "</body>";
+    document += "</html>";
+    t.plan(1);
+
+    const h1 = app.makeTag("h1", {}, "hello world"); 
+    t.equal(app.makePage(h1), document);
+});

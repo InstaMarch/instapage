@@ -131,6 +131,10 @@ test("Makes a basic page with an H1 Element containing the text 'hello world'", 
     document += "</html>";
     t.plan(1);
 
-    const h1 = app.makeTag("h1", {}, "hello world"); 
+    const h1 = app.makeTag("h1", {}, "hello world");
     t.equal(app.makePage(h1), document);
+});
+
+test("Makes a News and Information Study Group Title with date.", function (t) {
+    "use strict";
 });

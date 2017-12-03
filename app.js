@@ -41,11 +41,15 @@ module.exports.makeTag = function (tagName, attributes, child) {
     return "";
 };
 
-module.exports.makePage = function () {
+module.exports.makePage = function (content) {
+    console.log(content);
     let document = "";
     document += "<!DOCTYPE html>";
     document += "<html>";
     document += "<body>";
+    if (content !== undefined) {
+        document += content;
+    }
     document += "</body>";
     document += "</html>";
     return document;

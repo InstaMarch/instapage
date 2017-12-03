@@ -1,13 +1,12 @@
 {
   "name": "instapage",
   "version": "0.0.1",
-  "description": "super simple static site generator",
+  "description": "Super simple static site generator.",
   "main": "index.js",
   "config": {
     "lintcmd": "./node_modules/.bin/jslint ./*.js ./tests/*.js"
   },
   "scripts": {
-    "help": "\"instapage -help\"",
     "test": "nyc tape ./tests/test.js",
     "instalint": "$npm_package_config_lintcmd",
     "server:launch": "open ",
@@ -22,8 +21,8 @@
     "node",
     "js"
   ],
-  "author": "mr & bp",
-  "license": "ISC",
+  "contributors": ["Mike Ricos", "Ben Pardo"],
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/InstaMarch/instapage/issues"
   },

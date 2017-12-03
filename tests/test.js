@@ -98,13 +98,14 @@ test("Make ul with multiple li elements", function (t) {
 test("Makes a tag with an invalid child", function (t) {
     "use strict";
     t.plan(1);
-    t.equal(app.makeTag(
-        "p",
-        {},
-        3
-    ),
-    ""
-    )
+    t.equal(
+        app.makeTag(
+            "p",
+            {},
+            3
+        ),
+        ""
+    );
 });
 
 test("Makes a basic page with a doctype", function (t) {
@@ -133,8 +134,4 @@ test("Makes a basic page with an H1 Element containing the text 'hello world'", 
 
     const h1 = app.makeTag("h1", {}, "hello world");
     t.equal(app.makePage(h1), document);
-});
-
-test("Makes a News and Information Study Group Title with date.", function (t) {
-    "use strict";
 });

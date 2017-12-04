@@ -22,7 +22,12 @@
     "js"
   ],
   "contributors": ["Mike Ricos", "Ben Pardo"],
-  "license": "MIT",
+
+ "licenses": [{
+    "type": "MIT",
+    "url": "https://www.opensource.org/licenses/mit-license.php"
+  }],
+
   "bugs": {
     "url": "https://github.com/InstaMarch/instapage/issues"
   },
